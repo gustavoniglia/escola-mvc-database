@@ -1,3 +1,5 @@
+const bancoDados = require = ('')
+
 function listar(request, response){
     response.send("Função responsável pela listagem")
 }
