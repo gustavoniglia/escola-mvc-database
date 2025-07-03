@@ -10,6 +10,12 @@
     //Criando uma instância do express
     const app = express()
 
+    //Configurar o ejs templete engine
+    app.set('view engine', 'ejs')
+
+    // Configurar as pastas  das views
+    app.set('views', './src/views')
+
 
     // Criar uma rota de curos
     app.get('/cursos', cursoController.listar)
@@ -30,6 +36,6 @@
     app.delete('deletar-professor',professorController.deletar)
 
     //Iniciando o servidor na porta 3000
-    app.listen(3000, function(){
-        console.log("Servidor rodando na porta 3000")
+    app.listen(3100, function(){
+        console.log("Servidor rodando na porta 3100")
     })

@@ -1,8 +1,21 @@
-const bancoDados = require = ('')
+// Importando o model de cursos
+const { conexao } = require("../config/banco-dados")
+const cursoModel = require("../models/curso.model")
 
-function listar(request, response){
-    response.send("Função responsável pela listagem")
+async function listar(request, response) {
+
+//Chamar a função listarTodosCursos no model
+    //const cursos = await cursoModel.listarTodosCursos()
+    const [cursos] = await conexao.execute('SELECT * FROM cursos')
+
+    //listar cursos de bancos de dados
+    console.log('cursos', cursos)
+
+
+    //response.json(cursos)
+    response.render('listar-cursos', {cursos})
 }
+
 
 function cadastrar (request, response){
     response.send("Função responsavel por cadastrar um curso")

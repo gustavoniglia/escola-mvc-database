@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+</head>
+<body>
+    <h1>Lista de Cursos</h1>
+
+    <%= cursos %>
+
+
+    <table>
+
+        <thead>
+        <tr>
+        <tr>ID</tr>
+        <th>Carga horário</th>
+        <th>Escolariedade requirida</th>
+        </tr>
+        </thead>
+    <tbody>
+        <tr>
+            
+        </tr>
+    </tbody>
+
+    <% cursos.forEach(function (cursos) { %>
+          <tr>
+            <td><%=cursos.id  %></td>
+            <td><% = cursos.nome %></td>
+            <td><%= cursos.carga_horario%></td>
+            <td><%=cursos.Niescolariedade_requirida  %></td>
+        </tr>
+    <% }) %>
+    </table>
+</body>
+</html>
